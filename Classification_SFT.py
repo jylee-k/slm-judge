@@ -143,16 +143,6 @@ if __name__ == "__main__":
         print(f"Response must be in one of the columns, but was not present in: {data_df.columns}")
         raise Exception
 
-    # Create the dataset using prompt f-strings
-    rows = data_df.drop(columns=["response"]).to_numpy().tolist()
-    responses = data_df["response"].tolist()
-    data_df = pd.DataFrame(
-        {
-            "prompt": [tmpl.format(*row) for tmpl in templates for row in rows],
-            "response": [resp for _ in templates for resp in responses],
-        }
-    )
-
     # Train test split, if selected
     do_train_test_split = args.do_train_test_split
     if do_train_test_split:
@@ -164,8 +154,8 @@ if __name__ == "__main__":
         train_df, test_df = data_df.copy(), data_df.copy()
 
     # Create the Datasets
-    train_ds = CausalLMDataset(train_df, tokenizer=tokenizer, max_seq_len=max_seq_len)
-    test_ds = CausalLMDataset(test_df, tokenizer=tokenizer, max_seq_len=max_seq_len)
+    train_ds = ClassificationDataset(train_df, templates, tokenizer=tokenizer, max_seq_len=max_seq_len)
+    test_ds = ClassificationDataset(test_df, templates, tokenizer=tokenizer, max_seq_len=max_seq_len)
     print(f"Train dataset size: {len(train_ds)} | Test dataset size: {len(test_ds)}")
 
     # Training
