@@ -3,13 +3,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from unsloth import FastLanguageModel
-from torch.utils.data import DataLoader
 
 from tqdm import tqdm
 import datasets
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from trl import SFTTrainer, SFTConfig
 from sklearn.model_selection import train_test_split
 
