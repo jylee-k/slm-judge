@@ -5,7 +5,6 @@ import torch.nn.functional as F
 from unsloth import FastLanguageModel
 
 from tqdm import tqdm
-import datasets
 import numpy as np
 import pandas as pd
 from trl import SFTTrainer, SFTConfig
