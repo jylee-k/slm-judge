@@ -1,4 +1,6 @@
 import unsloth
+import os
+import shutil
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -73,7 +75,6 @@ if __name__ == "__main__":
     parser.add_argument("--bf16", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--num_train_epochs", type=float, default=5)
     parser.add_argument("--report_to", type=str, default="none")
-    parser.add_argument("--group_by_length", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--packing", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--max_length", type=int, default=2048)
     parser.add_argument("--torch_compile", action=argparse.BooleanOptionalAction, default=False)
@@ -153,6 +154,15 @@ if __name__ == "__main__":
     test_ds = ClassificationDataset(test_df, templates, tokenizer=tokenizer, max_seq_len=max_seq_len)
     print(f"Train dataset size: {len(train_ds)} | Test dataset size: {len(test_ds)}")
 
+    # Support manually overwrite the directory
+    if os.path.exists(args.output_dir):
+        if args.overwrite_output_dir:
+            shutil.rmtree(args.output_dir)
+        else:
+            raise FileExistsError(
+                f"{args.output_dir} already exists. Use --overwrite_output_dir to replace it."
+            )
+
     # Training
     training_args = SFTConfig(
         per_device_train_batch_size=args.per_device_train_batch_size,
@@ -169,12 +179,10 @@ if __name__ == "__main__":
         bf16=args.bf16,
         num_train_epochs=args.num_train_epochs,
         report_to=args.report_to,
-        group_by_length=args.group_by_length,
         packing=args.packing,
         max_length=args.max_length,
         torch_compile=args.torch_compile,
         output_dir=args.output_dir,
-        overwrite_output_dir=args.overwrite_output_dir,
         save_strategy=args.save_strategy,
         save_steps=args.save_steps,
         save_total_limit=args.save_total_limit,
