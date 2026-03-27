@@ -69,7 +69,6 @@ python Causal_LM_SFT.py <data_file_path> <prompt_path> [options]
 
 ## Performance
 
-* `--group_by_length` (default: True)
 * `--packing` (default: False)
 * `--torch_compile` (default: False)
 
