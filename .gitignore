@@ -208,3 +208,6 @@ __marimo__/
 
 # unsloth compile cache
 unsloth_compiled_cache
+
+# Training Output
+trained_models
