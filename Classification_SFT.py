@@ -4,8 +4,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from unsloth import FastLanguageModel
 
-from tqdm import tqdm
-import numpy as np
 import pandas as pd
 from trl import SFTTrainer, SFTConfig
 from sklearn.model_selection import train_test_split
