@@ -2,24 +2,11 @@ You will be given a context, a question, and an answer.
 Evaluate the answer and score it on a rubrics of 6 criterias, including Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance, on a scale of -2 to 2. 
 Just output 6 numbers, and do not provide any other explanation.
 
-CONTEXT: {}
+CONTEXT: {CONTEXT}
 
-QUESTION: {}
+QUESTION: {QUESTION}
 
-ANSWER: {}
-
-SCORES:
-The 6 scores are: 
-<SEP>
-You will be given a context, a question, and an answer.
-Evaluate the answer and score it on a rubrics of 6 criterias, including Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance, on a scale of -2 to 2. 
-Just output 6 numbers, and do not provide any other explanation.
-
-QUESTION: {}
-
-CONTEXT: {}
-
-ANSWER: {}
+ANSWER: {ANSWER}
 
 SCORES:
 The 6 scores are: 
@@ -28,11 +15,24 @@ You will be given a context, a question, and an answer.
 Evaluate the answer and score it on a rubrics of 6 criterias, including Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance, on a scale of -2 to 2. 
 Just output 6 numbers, and do not provide any other explanation.
 
-QUESTION: {}
+QUESTION: {QUESTION}
 
-ANSWER: {}
+CONTEXT: {CONTEXT}
 
-CONTEXT: {}
+ANSWER: {ANSWER}
+
+SCORES:
+The 6 scores are: 
+<SEP>
+You will be given a context, a question, and an answer.
+Evaluate the answer and score it on a rubrics of 6 criterias, including Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance, on a scale of -2 to 2. 
+Just output 6 numbers, and do not provide any other explanation.
+
+QUESTION: {QUESTION}
+
+ANSWER: {ANSWER}
+
+CONTEXT: {CONTEXT}
 
 SCORES:
 The 6 scores are: 
@@ -43,26 +43,11 @@ The 6 criterias are: Conciseness, Interpretability, Completeness, Clarity, Accur
 Score them on a scale of -2 to 2. 
 Just output 6 numbers, and do not provide any other explanation.
 
-QUESTION: {}
+QUESTION: {QUESTION}
 
-ANSWER: {}
+ANSWER: {ANSWER}
 
-CONTEXT: {}
-
-SCORES:
-The 6 scores are: 
-<SEP>
-You are given a context, a question, and an answer.
-Evaluate the answer and score it on a rubrics of 6 criterias.
-The 6 criterias are: Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance.
-Score them on a scale of -2 to 2. 
-Just output 6 numbers, and do not provide any other explanation.
-
-QUESTION: {}
-
-CONTEXT: {}
-
-ANSWER: {}
+CONTEXT: {CONTEXT}
 
 SCORES:
 The 6 scores are: 
@@ -73,11 +58,26 @@ The 6 criterias are: Conciseness, Interpretability, Completeness, Clarity, Accur
 Score them on a scale of -2 to 2. 
 Just output 6 numbers, and do not provide any other explanation.
 
-QUESTION: {}
+QUESTION: {QUESTION}
 
-CONTEXT: {}
+CONTEXT: {CONTEXT}
 
-ANSWER: {}
+ANSWER: {ANSWER}
+
+SCORES:
+The 6 scores are: 
+<SEP>
+You are given a context, a question, and an answer.
+Evaluate the answer and score it on a rubrics of 6 criterias.
+The 6 criterias are: Conciseness, Interpretability, Completeness, Clarity, Accuracy, and Relevance.
+Score them on a scale of -2 to 2. 
+Just output 6 numbers, and do not provide any other explanation.
+
+QUESTION: {QUESTION}
+
+CONTEXT: {CONTEXT}
+
+ANSWER: {ANSWER}
 
 SCORES:
 The six scores I rate are: 
@@ -88,11 +88,11 @@ The 6 criterias are: Conciseness, Interpretability, Completeness, Clarity, Accur
 Score them on a scale of -2 to 2. 
 Just output 6 numbers, and do not provide any other explanation.
 
-QUESTION: {}
+QUESTION: {QUESTION}
 
-CONTEXT: {}
+CONTEXT: {CONTEXT}
 
-ANSWER: {}
+ANSWER: {ANSWER}
 
 Remember:
 The first number will be the score for Conciseness.

@@ -1,9 +1,9 @@
 You will be given a text, and your task is to classify it into a sentiment.
 This is the list of sentiments you can choose from:
-{}
+{LIST}
 
 <Start of text>
-{}
+{TEXT}
 <End of text>
 
 The type of sentiment the text display is: 

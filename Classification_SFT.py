@@ -135,7 +135,7 @@ if __name__ == "__main__":
         data_df = pd.read_csv(data_file_path)
     except FileNotFoundError:
         print(f"Error: The file '{data_file_path}' was not found.")
-    if not 'response' in data_df.columns:
+    if not 'label' in data_df.columns:
         print(f"Response must be in one of the columns, but was not present in: {data_df.columns}")
         raise Exception
 
@@ -144,8 +144,8 @@ if __name__ == "__main__":
     if do_train_test_split:
         test_split_ratio = args.test_split_ratio
         train_df, test_df = train_test_split(data_df, test_size=test_split_ratio, random_state=random_state)
-        train_df.reset_index(inplace=True)
-        test_df.reset_index(inplace=True)
+        train_df.reset_index(inplace=True, drop=True)
+        test_df.reset_index(inplace=True, drop=True)
     else:
         train_df, test_df = data_df.copy(), data_df.copy()
 
