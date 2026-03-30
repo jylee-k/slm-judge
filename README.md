@@ -86,10 +86,10 @@ python causal_lm_sft.py <data_file_path> <prompt_path> [options]
 
 ## Note on Data Augmentation
 
-* **Causal_LM_SFT** performs data augmentation *before* dataset creation.
+* **causal_lm_sft** performs data augmentation *before* dataset creation.
   As a result, the final dataset size becomes:
   `n_prompts × n_original_size`
 
-* **Classification_SFT** applies data augmentation *on-the-fly* during training, enabling random prompt shuffling.
+* **classification_sft** applies data augmentation *on-the-fly* during training, enabling random prompt shuffling.
   Therefore, the dataset size remains:
   `n_original_size`, with a different prompt sampled at each iteration.
