@@ -7,13 +7,13 @@ This script trains a language model using LoRA or full fine-tuning with configur
 ## Usage
 
 ```bash
-python Classification_SFT.py <data_file_path> <prompt_path> [options]
+python classification_sft.py <data_file_path> <prompt_path> [options]
 ```
 
 or
 
 ```bash
-python Causal_LM_SFT.py <data_file_path> <prompt_path> [options]
+python causal_lm_sft.py <data_file_path> <prompt_path> [options]
 ```
 
 ## Required Arguments
